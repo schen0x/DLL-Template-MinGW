@@ -1,2 +1,10 @@
 # DLL-Template-MinGW
-DLL Template cross compiled with MinGW, x64
+- x64 DLL Template
+- C++
+- Cross compile with MinGW
+
+## Usage
+
+```sh
+make
+```
