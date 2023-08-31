@@ -28,6 +28,9 @@ python3 runDll.py
 
 - TL;DR, the DLL Loading flow: DLLOptionalHeader."Entry Point" (DllMainCRTStartup(optional) -> ... -> DLLMain) -> finish setup
 - Normally, the "AddressOfEntryPoint" (@"PE\0\0"+0x28 == 4("PE\0\0") + 20(COFF Header) + 16(OptionalHeader->AddressOfEntryPoint)) of the dll should be called by us, with "DLL_PROCESS_ATTACH", for once during the setup
+- The default `_DllMainCRTStartup` handles C runtime library initialization etc.
+- [Use the C Run-Time, MSDN](https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/cpp/libraries/use-c-run-time)
+- [DLLs and Visual C++ run-time library behavior, Default DLL entry point DllMainCRTStartup, MSDN](https://learn.microsoft.com/en-us/cpp/build/run-time-library-behavior?view=msvc-170)
 
 ```c++
 // BOOL APIENTRY DllEntryPoint (
